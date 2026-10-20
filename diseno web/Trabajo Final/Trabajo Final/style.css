@@ -1,0 +1,645 @@
+
+main > section {
+    text-align: center;
+}
+
+
+#sobre-mi > p,
+#astronomia .astronomia-contenido > p,
+#Mi\ Artstation p,
+#contacto > p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    justify-items: stretch;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+
+.tarjeta,
+.card {
+    text-align: center;
+}
+
+
+.astronomia-temas {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.astronomia-temas > div {
+    text-align: center;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.boton {
+    margin: 10px auto;
+}
+
+
+main img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#Mis\ fotos a {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+
+
+@media (max-width: 600px) {
+    .tarjetas,
+    .astronomia-temas {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    main > section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    #sobre-mi > p,
+    #astronomia .astronomia-contenido > p {
+        text-align: center;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+}
+
+
+
+:root {
+    --fondo: #050711;
+    --fondo-secundario: #0b1020;
+    --tarjeta: #111a30;
+
+    --azul: #53d5ff;
+    --violeta: #9185ff;
+    --blanco: #f4f7ff;
+    --gris: #a0aec5;
+
+    --borde: rgba(137, 165, 255, 0.20);
+    --borde-hover: rgba(83, 213, 255, 0.70);
+
+    --radio: 18px;
+    --ancho: 1150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--blanco);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+p {
+    color: var(--gris);
+}
+
+a {
+    color: var(--azul);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    color: var(--azul);
+}
+
+body > img {
+    width: 100%;
+    height: clamp(220px, 32vw, 400px);
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7);
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 55%,
+        transparent 100%
+    );
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 7, 17, 0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--borde);
+}
+
+.navbar {
+    width: min(100% - 40px, 1300px);
+    min-height: 100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.menu a {
+    position: relative;
+    color: var(--gris);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: var(--azul);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--violeta)
+    );
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+
+main > section {
+    padding: 90px 24px;
+    scroll-margin-top: 110px;
+}
+
+main > section:nth-of-type(even) {
+    background: rgba(11, 16, 32, 0.55);
+}
+
+main > section > h2 {
+    text-align: center;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+main > section > h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 18px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--violeta)
+    );
+}
+
+#inicio {
+    min-height: 540px;
+    padding: 90px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(76, 91, 210, 0.17),
+            transparent 60%
+        );
+}
+
+#inicio h1 {
+    max-width: 950px;
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.15;
+    font-weight: 850;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+
+    background: linear-gradient(
+        110deg,
+        #ffffff,
+        var(--azul),
+        var(--violeta)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#inicio p {
+    max-width: 650px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 13px 28px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: linear-gradient(
+        115deg,
+        #2563eb,
+        #7565ff
+    );
+
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton:hover {
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(83, 213, 255, 0.25);
+}
+
+.boton:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 5px;
+}
+
+#sobre-mi {
+    text-align: center;
+}
+
+#sobre-mi > p {
+    max-width: 900px;
+    margin: auto;
+    text-align: center !important;
+    font-size: 17px !important;
+    line-height: 2;
+}
+
+.tarjetas {
+    width: min(100%, var(--ancho));
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.tarjeta,
+.card {
+    min-width: 0;
+    padding: 30px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(19, 30, 53, 0.95),
+        rgba(10, 15, 29, 0.95)
+    );
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tarjeta:hover,
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--borde-hover);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.tarjeta h3,
+.card h3 {
+    color: var(--azul);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.tarjeta p,
+.card p {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+#astronomia {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding: 45px 0;
+    background: transparent;
+    border-radius: var(--radio);
+}
+
+.astronomia-contenido {
+    max-width: var(--ancho);
+    margin: auto;
+    text-align: center;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+#astronomia .astronomia-contenido > p {
+    max-width: 900px;
+    margin: 0 auto 22px;
+    text-align: center;
+}
+
+.astronomia-temas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.astronomia-temas > div {
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.astronomia-temas > div:hover {
+    transform: translateY(-5px);
+    border-color: var(--violeta);
+}
+
+.astronomia-temas h3 {
+    color: var(--violeta);
+    margin-bottom: 10px;
+}
+
+.astronomia-temas p {
+    font-size: 14px;
+}
+
+#aprendiendo {
+    text-align: center;
+}
+
+#aprendiendo .card {
+    max-width: 900px;
+    margin: 18px auto;
+}
+
+#Mi\ Artstation,
+#Mis\ fotos {
+    text-align: center;
+}
+
+#Mi\ Artstation p {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+#Mi\ Artstation a,
+#Mis\ fotos a {
+    display: inline-block;
+    margin: 12px auto;
+    font-weight: 700;
+}
+
+#Mi\ Artstation a:hover,
+#Mis\ fotos a:hover {
+    color: white;
+}
+
+#metas {
+    text-align: center;
+}
+
+#metas > .tarjeta,
+#metas > article {
+    max-width: 750px;
+    margin: 20px auto;
+}
+
+.programacion {
+    color: var(--azul);
+}
+
+.siendo {
+    color: #b5a4ff;
+}
+
+.seguir {
+    color: #f0abfc;
+}
+
+#contacto {
+    text-align: center;
+}
+
+#contacto > p {
+    max-width: 700px;
+    margin: auto;
+}
+
+#contacto a {
+    font-weight: 700;
+}
+
+footer {
+    padding: 28px 20px;
+    text-align: center;
+    background: #03050c;
+    border-top: 1px solid var(--borde);
+}
+
+footer p {
+    color: #8593ab;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        width: calc(100% - 36px);
+        padding: 18px 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 15px 22px;
+    }
+
+    main > section {
+        padding: 75px 24px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 550px) {
+    body > img {
+        height: 210px;
+    }
+
+    .navbar {
+        width: calc(100% - 24px);
+    }
+
+    .menu {
+        gap: 10px 15px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    main > section {
+        padding: 60px 18px;
+    }
+
+    #inicio {
+        min-height: 430px;
+        padding: 70px 18px;
+    }
+
+    #inicio h1 {
+        font-size: clamp(37px, 10vw, 50px);
+        letter-spacing: -1px;
+    }
+
+    #inicio p {
+        font-size: 15px;
+    }
+
+    main > section > h2 {
+        font-size: 30px;
+    }
+
+    #sobre-mi > p {
+        font-size: 15px !important;
+    }
+
+    .tarjeta,
+    .card {
+        padding: 23px;
+    }
+
+    .astronomia-temas {
+        grid-template-columns: 1fr;
+    }
+
+    #astronomia {
+        padding: 30px 0;
+    }
+
+    .boton {
+        padding: 12px 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
